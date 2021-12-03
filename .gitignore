@@ -1,0 +1,14 @@
+# Modules
+node_modules
+
+# Build / Test files
+coverage
+es
+umd
+/*.js
+
+# Include Rollup config
+!rollup.config.js
+
+# Misc
+.DS_Store

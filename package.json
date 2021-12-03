@@ -1,0 +1,62 @@
+{
+  "name": "replace-me",
+  "version": "0.1.0",
+  "description": "[Package description here]",
+  "repository": {
+    "type": "git",
+    "url": "[your-git-repo]"
+  },
+  "author": "[Author Info]",
+  "license": "MIT",
+  "files": [
+    "es",
+    "src",
+    "types",
+    "umd",
+    "index.js"
+  ],
+  "directories": {
+    "lib": "/src"
+  },
+  "main": "index.js",
+  "module": "es/index.js",
+  "jsnext:main": "src/index.js",
+  "types": "types",
+  "scripts": {
+    "clean": "rimraf index.js es umd",
+    "prebuild": "npm run clean",
+    "build": "node ./tools/build.js",
+    "watch": "babel ./src -d . --ignore __mocks__,__tests__,**/*.test.js --watch",
+    "prepare": "npm run build",
+    "prepublishOnly": "node ./tools/build.js",
+    "push-release": "git push origin master && git push --tags",
+    "dtslint": "dtslint types",
+    "test": "snyk test && jest",
+    "test:ci": "jest",
+    "types": "tsc"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^27.0.6",
+    "babel-plugin-dev-expression": "^0.2.2",
+    "babel-polyfill": "^6.26.0",
+    "dtslint": "^4.0.6",
+    "gzip-size": "^7.0.0",
+    "jest": "^27.0.6",
+    "pretty-bytes": "^5.5.0",
+    "regenerator-runtime": "^0.13.7",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.36.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "snyk": "^1.437.3",
+    "typescript": "^4.2.3"
+  }
+}
