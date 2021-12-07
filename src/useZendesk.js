@@ -4,6 +4,17 @@ import ZendeskContext from './ZendeskContext'
 import fetcher from './libs/fetch'
 import { API_VERSION } from './constants'
 
+/**
+ * Zendesk Help Center API Hook
+ *
+ * @param {Object} props
+ * @param {string=} props.apiVersion
+ * @param {string=} props.domain
+ * @param {string} props.endpoint
+ * @param {boolean=} props.includeLocale
+ * @param {string=} props.locale
+ * @returns
+ */
 const useZendesk = ({
   apiVersion = API_VERSION,
   domain,
