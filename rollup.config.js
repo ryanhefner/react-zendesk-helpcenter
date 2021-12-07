@@ -11,11 +11,17 @@ const config = {
     name: pkg.name,
     file: './index.js',
     format: 'umd',
-    globals: {},
+    globals: {
+      'react': 'React',
+      'react-dom': 'ReactDOM',
+    },
     banner: `/*! [banner info] !*/`,
     footer: '/* [footer info] */',
   },
-  external: [],
+  external: [
+    'react',
+    'react-dom',
+  ],
   plugins: [
     babel({
       exclude: 'node_modules/**',
