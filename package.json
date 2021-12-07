@@ -1,19 +1,45 @@
 {
-  "name": "replace-me",
+  "name": "react-zendesk-helpcenter",
   "version": "0.1.0",
-  "description": "[Package description here]",
-  "repository": {
-    "type": "git",
-    "url": "[your-git-repo]"
-  },
-  "author": "[Author Info]",
+  "description": "React library that makes it easy to render Zendesk Help Center content in your React apps.",
+  "repository": "ryanhefner/react-zendesk-helpcenter",
+  "keywords": [
+    "zendesk",
+    "helpcenter",
+    "knowledge base"
+  ],
+  "author": "Ryan Hefner <hi@ryanhefner.com> (https://www.ryanhefner.com)",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanhefner/react-zendesk-helpcenter/issues"
+  },
+  "homepage": "https://github.com/ryanhefner/react-zendesk-helpcenter#readme",
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/ryanhefner"
+    },
+    {
+      "type": "patreon",
+      "url": "https://www.patreon.com/ryanhefner"
+    },
+    {
+      "type": "opencollective",
+      "url": "https://opencollective.com/ryanhefner"
+    }
+  ],
   "files": [
     "es",
+    "libs",
     "src",
     "types",
     "umd",
-    "index.js"
+    "Article.js",
+    "constants.js",
+    "index.js",
+    "useZendesk.js",
+    "ZendeskContext.js",
+    "ZendeskProvider.js"
   ],
   "directories": {
     "lib": "/src"
@@ -23,7 +49,8 @@
   "jsnext:main": "src/index.js",
   "types": "types",
   "scripts": {
-    "clean": "rimraf index.js es umd",
+    "clean": "rimraf index.js es umd Article.js constants.js useZendesk.js ZendeskContext.js ZendeskProvider.js libs",
+    "clean:types": "rimraf types",
     "prebuild": "npm run clean",
     "build": "node ./tools/build.js",
     "watch": "babel ./src -d . --ignore __mocks__,__tests__,**/*.test.js --watch",
@@ -33,21 +60,34 @@
     "dtslint": "dtslint types",
     "test": "snyk test && jest",
     "test:ci": "jest",
-    "types": "tsc"
+    "types": "npm run clean:types && tsc"
+  },
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8"
+  },
+  "dependencies": {
+    "@types/react": "^17.0.37",
+    "react-markdown": "^7.1.1",
+    "swr": "^1.1.0",
+    "warning": "^4.0.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.16.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^27.0.6",
     "babel-plugin-dev-expression": "^0.2.2",
     "babel-polyfill": "^6.26.0",
     "dtslint": "^4.0.6",
-    "gzip-size": "^7.0.0",
+    "gzip-size": "6.0.0",
     "jest": "^27.0.6",
     "pretty-bytes": "^5.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "regenerator-runtime": "^0.13.7",
     "rimraf": "^3.0.2",
     "rollup": "^2.36.1",
