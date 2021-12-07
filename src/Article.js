@@ -1,6 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { ReactFragment, useEffect } from 'react'
 import useZendesk from './useZendesk'
 
+/**
+ *
+ * @param {Object} props
+ * @param {string=} props.apiVersion
+ * @param {(number | string)} props.articleId
+ * @param {string=} props.domain
+ * @param {ReactFragment=} props.loadingComponent
+ * @param {string=} props.locale
+ * @param {(error) => void=} props.onError
+ * @param {(data) => void=} props.onLoad
+ * @returns
+ */
 const Article = ({
   apiVersion,
   articleId,
