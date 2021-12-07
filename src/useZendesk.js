@@ -5,6 +5,7 @@ import fetcher from './libs/fetch'
 import { API_VERSION } from './constants'
 
 /**
+ * useZendesk - Hook
  * Zendesk Help Center API Hook
  *
  * @param {Object} props
