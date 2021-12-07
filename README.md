@@ -1,4 +1,4 @@
-# react-zendesk-helpcenter
+# 📖 react-zendesk-helpcenter
 
 React library that makes it easy to render Zendesk Help Center content in your React apps.
 
