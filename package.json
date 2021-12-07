@@ -68,6 +68,7 @@
   },
   "dependencies": {
     "@types/react": "^17.0.37",
+    "clean-react-props": "^0.4.0",
     "react-markdown": "^7.1.1",
     "swr": "^1.1.0",
     "warning": "^4.0.3"
