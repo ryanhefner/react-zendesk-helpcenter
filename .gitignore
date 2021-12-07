@@ -4,8 +4,14 @@ node_modules
 # Build / Test files
 coverage
 es
+examples
+libs
 umd
 /*.js
+
+# Include src & types
+!src/**/*
+!types/**/*
 
 # Include Rollup config
 !rollup.config.js
